@@ -1,0 +1,15 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+        "Handle": { "type": "string", "minLength": 1 },
+        "Title": { "type": "string" },
+        "Vendor": { "type": "string", "minLength": 1 },
+        "Variant SKU": { "type": "string", "minLength": 1 },
+        "Variant Inventory Qty": { "type": "integer", "minimum": 0 },
+        "Variant Price": { "type": "number", "minimum": 0.01, "exclusiveMinimum": 0 },
+        "Variant Barcode": { "type": ["string", "null"], "pattern": "^[0-9]{9}$" }
+    },
+    "required": ["Handle", "Vendor", "Variant SKU", "Variant Inventory Qty", "Variant Price"],
+    "additionalProperties": false
+}
